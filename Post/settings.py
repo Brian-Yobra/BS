@@ -16,11 +16,12 @@ import dotenv
 
 dotenv.load_dotenv()
 
-NAME = os.getenv("NAME")
-HOST = os.getenv("HOST")
-USER = os.getenv("USER")
-PASS = os.getenv("PASS")
-PORT = os.getenv("PORT")
+DB_NAME = os.getenv("DB_NAME")
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASS = os.getenv("DB_PASS")
+DB_PORT = os.getenv("DB_PORT")
+DB_SSLMODE = os.getenv("DB_SSLMODE")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -83,14 +84,18 @@ WSGI_APPLICATION = 'Post.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': NAME,
-        'USER': USER,
-        'PASSWORD': PASS,
-        'HOST': HOST,
-        'PORT': PORT
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASS,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
+        "OPTIONS": {
+            "sslmode": DB_SSLMODE
+            }
     }
 }
 
