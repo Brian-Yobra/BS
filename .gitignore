@@ -1,3 +1,5 @@
 .env
+.vscode/
 Post/__pycache__
 Books/__pycache__
+Books/migrations
