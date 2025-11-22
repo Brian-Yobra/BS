@@ -7,4 +7,4 @@ class Books(models.Model):
     pub_date = models.DateTimeField("Date published")
     total_pages = models.IntegerField("Page Numbers")
     read_pages = models.IntegerField("No of pages read")
-    done_read = models.BooleanField("True or False")
+    done_read = models.BooleanField("Read?")
