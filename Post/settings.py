@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dotenv
 
+
 dotenv.load_dotenv()
 
 DB_NAME = os.getenv("DB_NAME")
@@ -37,7 +38,7 @@ SECRET_KEY = 'django-insecure-my76=f%$(#a8@7rjde8cjc+-*gxm=5o2d2uy4z91g!ecxo^!&q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -49,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'Books'
 ]
 
 MIDDLEWARE = [
@@ -94,8 +97,7 @@ DATABASES = {
         'HOST': DB_HOST,
         'PORT': DB_PORT,
         "OPTIONS": {
-            "sslmode": DB_SSLMODE
-            }
+            "sslmode": DB_SSLMODE}
     }
 }
 
